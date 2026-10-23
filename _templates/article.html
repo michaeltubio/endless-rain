@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+  TEMPLATE FOR A NEW ARTICLE OR STORY
+  1. Copy this file into /articles/ or /fiction/ and rename it with lowercase-words-and-dashes.html
+  2. Change the <title>, description, canonical and og: tags in the <head> (search for "Article Title" and "your-slug-here")
+  3. Replace the content inside <article>
+  4. Add a link to it on articles.html or fiction.html
+  This folder starts with an underscore, so GitHub Pages does not publish it.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Article Title · endless rain</title>
+  <meta name="description" content="One sentence describing the piece. Shows up in search results and link previews.">
+  <link rel="canonical" href="https://endlessrain.xyz/articles/your-slug-here">
+
+  <meta property="og:site_name" content="endless rain">
+  <meta property="og:title" content="Article Title">
+  <meta property="og:description" content="One sentence describing the piece. Shows up in search results and link previews.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://endlessrain.xyz/articles/your-slug-here">
+
+  <link rel="icon" href="../favicon.ico" sizes="16x16">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/icons/favicon-64.png">
+  <link rel="apple-touch-icon" href="../assets/icons/favicon-128.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;display=swap">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="site-title" href="../index.html">endless rain</a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="../blog.html">blog</a></li>
+        <li><a href="../articles.html" aria-current="page">articles</a></li>
+        <li><a href="../fiction.html">fiction</a></li>
+        <li><a href="../moodboard.html">moodboard</a></li>
+        <li><a href="../about.html">about</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <article>
+      <header class="piece-header">
+        <h1>Article Title</h1>
+        <p class="piece-meta"><time datetime="2026-01-31">31 January 2026</time></p>
+      </header>
+
+      <p>First paragraph. Each paragraph gets its own &lt;p&gt; tag; no &lt;br&gt; tags needed.</p>
+      <p>Second paragraph.</p>
+
+      <h2>Section heading</h2>
+      <p>More text.</p>
+
+      <!-- For fiction: use <hr class="scene-break"> for a ### break, and put the file in /fiction/. -->
+
+      <section class="works-cited" aria-labelledby="works-cited">
+        <h2 id="works-cited">Works Cited</h2>
+        <ul>
+          <li>Author, First. &ldquo;Title.&rdquo; Publication, Date, <a href="https://example.com">https://example.com</a>.</li>
+        </ul>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; Michael Tubio</p>
+  </footer>
+</body>
+</html>

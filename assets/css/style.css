@@ -1,0 +1,322 @@
+/* endless rain: site stylesheet
+   One file for every page. Colors and sizes live in the variables below,
+   so changing the look means editing :root, not hunting through rules. */
+
+:root {
+  --bg: #0b0b0c;
+  --text: #ecebe8;
+  --muted: #a3a09b;
+  --accent: #f8e5ee;
+  --rule: #2c2b2a;
+  --link: #f3c9db;
+
+  --font-body: "Libre Baskerville", Baskerville, Georgia, serif;
+  --measure: 38rem;          /* max line length for reading */
+  --gutter: 1.25rem;         /* side padding on small screens */
+
+  color-scheme: dark;
+}
+
+/* ---------- Base ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--link);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 2.5rem 0;
+}
+
+/* Visible only when tabbed to, for keyboard users. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0.5rem;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 0.5rem 1rem;
+}
+
+.skip-link:focus {
+  left: 0.5rem;
+}
+
+/* ---------- Layout ---------- */
+
+.site-header,
+main,
+.site-footer {
+  width: 100%;
+  max-width: calc(var(--measure) + 2 * var(--gutter));
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.site-header {
+  padding-top: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--rule);
+  text-align: center;
+}
+
+.site-title {
+  display: inline-block;
+  margin: 0 0 1rem;
+  color: var(--accent);
+  font-size: clamp(2.25rem, 8vw, 3.25rem);
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1.1;
+  text-decoration: none;
+}
+
+.site-title:hover {
+  color: var(--accent);
+}
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+main {
+  padding-top: 2.5rem;
+  padding-bottom: 4rem;
+}
+
+.site-footer {
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* ---------- Text ---------- */
+
+h1,
+h2,
+h3 {
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 1.75rem;
+  margin: 0 0 0.5rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin: 2.5rem 0 1rem;
+}
+
+p {
+  margin: 0 0 1.4em;
+}
+
+blockquote {
+  margin: 2rem 0;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--rule);
+  color: var(--muted);
+}
+
+blockquote p:last-child,
+blockquote ol:last-child {
+  margin-bottom: 0;
+}
+
+blockquote footer {
+  margin-top: 0.75rem;
+}
+
+cite {
+  font-style: italic;
+}
+
+/* ---------- Home page ---------- */
+
+.epigraph-home {
+  margin: 0 0 2.5rem;
+  font-size: clamp(1.4rem, 4.5vw, 1.85rem);
+  line-height: 1.5;
+}
+
+.intro {
+  text-align: center;
+}
+
+/* ---------- Article and story pages ---------- */
+
+.piece-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.piece-meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Scene break inside fiction */
+hr.scene-break {
+  border: 0;
+  margin: 2.5rem 0;
+  text-align: center;
+}
+
+hr.scene-break::after {
+  content: "###";
+  color: var(--muted);
+  letter-spacing: 0.3em;
+}
+
+.works-cited ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.works-cited li {
+  margin-bottom: 0.9rem;
+  padding-left: 2rem;
+  text-indent: -2rem; /* hanging indent, MLA style */
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Listing pages (articles, fiction, blog) ---------- */
+
+.entry-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.entry-list li {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.entry-list li:first-child {
+  padding-top: 0;
+}
+
+.entry-list h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.2rem;
+}
+
+.entry-list h2 a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.entry-list h2 a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.blog-post + .blog-post {
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--rule);
+}
+
+.blog-post h2 {
+  margin: 0 0 0.25rem;
+}
+
+.blog-post .piece-meta {
+  margin-bottom: 1.25rem;
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 30rem) {
+  body {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .site-header {
+    padding-top: 2rem;
+  }
+
+  .site-nav ul {
+    gap: 0.25rem 1.1rem;
+  }
+}
+
+/* Hidden on screen, still read by screen readers and search engines. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}

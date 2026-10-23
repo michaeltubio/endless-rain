@@ -1,0 +1,4 @@
+# GitHub Pages settings. The site is plain HTML; this only keeps
+# the README from being published as a page.
+exclude:
+  - README.md

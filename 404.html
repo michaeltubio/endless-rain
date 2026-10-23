@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found · endless rain</title>
+  <meta name="description" content="Page not found.">
+  <meta name="robots" content="noindex">
+
+  <meta property="og:site_name" content="endless rain">
+  <meta property="og:title" content="Page not found">
+  <meta property="og:description" content="Page not found.">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="/favicon.ico" sizes="16x16">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="/assets/icons/favicon-64.png">
+  <link rel="apple-touch-icon" href="/assets/icons/favicon-128.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="site-title" href="/">endless rain</a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="/blog.html">blog</a></li>
+        <li><a href="/articles.html">articles</a></li>
+        <li><a href="/fiction.html">fiction</a></li>
+        <li><a href="/moodboard.html">moodboard</a></li>
+        <li><a href="/about.html">about</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <h1>Page not found</h1>
+    <p>That page doesn&rsquo;t exist, or it has moved. Try the <a href="/">home page</a> or one of the sections above.</p>
+    <script>
+      // Old links (from before the October 2026 reorganization) still get people to the right page.
+      (function () {
+        var moved = {
+          "/about page.html": "/about",
+          "/articles page.html": "/articles",
+          "/blog page.html": "/blog",
+          "/fiction page.html": "/fiction",
+          "/moodboard page.html": "/moodboard",
+          "/articles/killing them softly and the 2008 financial crisis.html": "/articles/killing-them-softly",
+          "/articles/evangelical christianity social media and qanon.html": "/articles/evangelical-christianity-social-media-and-qanon",
+          "/articles/pokimane offline chat.html": "/articles/twitch-offline-chat",
+          "/fiction/in the pit of your stomach.html": "/fiction/in-the-pit-of-your-stomach",
+          "/fiction/my cross to bear.html": "/fiction/my-cross-to-bear"
+        };
+        var path;
+        try { path = decodeURIComponent(window.location.pathname); } catch (e) { return; }
+        var target = moved[path] || moved[path.toLowerCase()];
+        if (target) window.location.replace(target);
+      })();
+    </script>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; Michael Tubio</p>
+  </footer>
+</body>
+</html>
